@@ -27,7 +27,5 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        // Vector2 lookDir = mousePos - rigidbody.position; // get vector in lookDir
-        // float angle = Mathf.Atan2(lookDir.y, lookDir.x);
     }
 }
