@@ -23,10 +23,10 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         
-        if(movement.x > 0)
-        {
-            Flip();
-        }
+        if(movement.x > 0 && !m_FacingRight) Flip(); //moving right
+        if(movement.x < 0 && m_FacingRight) Flip(); //moving left
+
+
     }
 
     void FixedUpdate()
