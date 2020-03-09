@@ -5,7 +5,7 @@ public class blinking : MonoBehaviour
 {
     void Start()
     {
-        Invoke("blink",1f);
+        Invoke("blink",0.1f);
     }
 
     void blink()

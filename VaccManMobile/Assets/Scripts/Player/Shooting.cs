@@ -5,13 +5,17 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPref;
     public float bulletForce = 20f;
 
+    // ---- aiming ----
     [SerializeField]
     private Transform aimTransform;
     Vector3 mousePos;
 
+    // ---- effects ----
+    [SerializeField]
+    private ParticleSystem ps_muzzleFlash;
+
     void Update()
     {
-       
         Aim();
 
         if(Input.GetButtonDown("Fire1"))
@@ -24,6 +28,7 @@ public class Shooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPref, aimTransform.position, aimTransform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(aimTransform.right * bulletForce,ForceMode2D.Impulse);
+        ps_muzzleFlash.Play();
     }
 
     // Get Mouseposition, calculate direction vector and rotate the aimTransformObject in that direction
@@ -36,11 +41,16 @@ public class Shooting : MonoBehaviour
         aimTransform.eulerAngles = new Vector3(0,0,angle);
     }
 
-    // void OnCollisionEnter2D(Collider2D other)
+
+    // void OnCollisionEnter2D(Collision2D other)
     // {
-    //     if(other.CompareTag("Player"))
+    //     if(other.gameObject.tag == "Player")
+    //     { 
+    //         Debug.Log("Hit Player");
+    //     }
+    //     if(other.gameObject.tag == "Enemy")
     //     {
-    //         return;
+    //         Debug.Log("test");
     //     }
     //     else
     //     {
@@ -50,7 +60,7 @@ public class Shooting : MonoBehaviour
 
     //         //destroy this
     //         //Destroy(this);
-    //         Debug.Log("Hit " + other.name);
+    //         Debug.Log("Hit " + other.gameObject.name);
     //     }
     // }
 }
