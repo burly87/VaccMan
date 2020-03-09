@@ -10,6 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rigidbody;
     Vector2 movement;
     bool m_FacingRight = false;
+    bool moveAble = true;
+
+    public bool MyMoveAble
+    {
+       // get {return moveAble;}
+        set { moveAble = value;}
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,18 +27,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        
+               
         if(movement.x > 0 && !m_FacingRight) Flip(); //moving right
         if(movement.x < 0 && m_FacingRight) Flip(); //moving left
-
 
     }
 
     void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if(moveAble)
+        {
+            rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 
     private void Flip()
