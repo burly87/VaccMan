@@ -2,28 +2,52 @@
 
 public class Shooting : MonoBehaviour
 {
-    public GameObject bulletPref;
-    public float bulletForce = 20f;
+    [Header("shooting")]    
+    Projectile projectileToSpawn;
+    public Projectile[] skills;                 // Debug Array with different Projectiles
+    private float currentCD = 0.0f;
 
+    [Header("aiming")]
     [SerializeField]
     private Transform aimTransform;
     Vector3 mousePos;
 
+    [Header("effects")]
+    [SerializeField]
+    private ParticleSystem ps_muzzleFlash;
+
+    void Start()
+    {
+        projectileToSpawn = skills[0];
+    }
+
     void Update()
     {
-       
         Aim();
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && currentCD <= 0.0f)
         {
+            currentCD = projectileToSpawn.cooldown;
             Shoot();
+        }
+        currentCD -= Time.deltaTime;
+
+        // Debug only 
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            projectileToSpawn = skills[0];
+        }
+         if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            projectileToSpawn = skills[1];
         }
     }
 
     void Shoot()
-    {
-        GameObject bullet = Instantiate(bulletPref, aimTransform.position, aimTransform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(aimTransform.right * bulletForce,ForceMode2D.Impulse);
+    {  
+        GameObject bullet = Instantiate(projectileToSpawn.prefab, aimTransform.position, aimTransform.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(aimTransform.right * projectileToSpawn.speed, ForceMode2D.Impulse);
+        ps_muzzleFlash.Play();
     }
 
     // Get Mouseposition, calculate direction vector and rotate the aimTransformObject in that direction
@@ -36,21 +60,23 @@ public class Shooting : MonoBehaviour
         aimTransform.eulerAngles = new Vector3(0,0,angle);
     }
 
-    // void OnCollisionEnter2D(Collider2D other)
-    // {
-    //     if(other.CompareTag("Player"))
-    //     {
-    //         return;
-    //     }
-    //     else
-    //     {
-    //         //apply dmg to object
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Hit " + other.name);
 
-    //         //play particle effect
+        if(other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("test");
+        }
+        else
+        {
+            //apply dmg to object
 
-    //         //destroy this
-    //         //Destroy(this);
-    //         Debug.Log("Hit " + other.name);
-    //     }
-    // }
+            //play particle effect
+
+            //destroy this
+            //Destroy(this);
+            Debug.Log("Hit " + other.gameObject.name);
+        }
+    }
 }

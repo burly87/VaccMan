@@ -9,6 +9,14 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rigidbody;
     Vector2 movement;
+    bool m_FacingRight = false;
+    bool moveAble = true;
+
+    public bool MyMoveAble
+    {
+       // get {return moveAble;}
+        set { moveAble = value;}
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +27,31 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+               
+        if(movement.x > 0 && !m_FacingRight) Flip(); //moving right
+        if(movement.x < 0 && m_FacingRight) Flip(); //moving left
+
     }
 
     void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        // Vector2 lookDir = mousePos - rigidbody.position; // get vector in lookDir
-        // float angle = Mathf.Atan2(lookDir.y, lookDir.x);
+        if(moveAble)
+        {
+            rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
+
+    private void Flip()
+	{
+		// Switch the way the player is labelled as facing.
+		m_FacingRight = !m_FacingRight;
+
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
 }
