@@ -3,8 +3,8 @@
 public class Shooting : MonoBehaviour
 {
     [Header("shooting")]    
-    Projectile projectileToSpawn;
-    public Projectile[] skills;                 // Debug Array with different Projectiles
+    Projectile_SO projectileToSpawn;
+    public Projectile_SO[] skills;                 // Debug Array with different Projectiles
     private float currentCD = 0.0f;
 
     [Header("aiming")]
