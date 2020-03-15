@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1739
     height: 847
-  m_MinSize: {x: 715, y: 472}
-  m_MaxSize: {x: 18010, y: 14022}
+  m_MinSize: {x: 715, y: 494}
+  m_MaxSize: {x: 18010, y: 14044}
   vertical: 0
-  controlID: 3731
+  controlID: 170
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 3760
+  controlID: 38
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 383
     width: 831
     height: 464
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 16}
@@ -217,10 +217,10 @@ MonoBehaviour:
     y: 0
     width: 466
     height: 847
-  m_MinSize: {x: 234, y: 472}
-  m_MaxSize: {x: 10004, y: 14022}
+  m_MinSize: {x: 234, y: 494}
+  m_MaxSize: {x: 10004, y: 14044}
   vertical: 1
-  controlID: 3737
+  controlID: 96
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -240,8 +240,8 @@ MonoBehaviour:
     y: 0
     width: 466
     height: 451
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.9445374, y: -0.093485124, z: -0.21085998}
+    m_Target: {x: 4.508175, y: -1.5505464, z: -0.7927068}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 5}
+    m_Value: {x: 4.508175, y: -1.5505464, z: -0.7927068}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -452,9 +452,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.701441
+    m_Target: 12.09112
     speed: 2
-    m_Value: 33.93016
+    m_Value: 12.09112
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -23872
+  m_LastSelectedObjectID: 15970
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -628,9 +628,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5e3e0000
-      m_LastClickedID: 15966
-      m_ExpandedIDs: 8680fffffa80ffff4ea4ffff30fbffff32fbfffffe3d0000
+      m_SelectedIDs: 3ea6ffff
+      m_LastClickedID: -22978
+      m_ExpandedIDs: 72fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -693,20 +693,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Projectiles
+    - Assets/Prefabs/Enemies
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Projectiles
+  - Assets/Prefabs/Enemies
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\MEINS\Workspace\Unity\VaccMan\VaccManMobile
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7e3b0000
-    m_LastClickedID: 15230
-    m_ExpandedIDs: 00000000c2330000ae3500001836000080370000d63a00007e3c000000ca9a3b
+    scrollPos: {x: 0, y: 11}
+    m_SelectedIDs: 16360000
+    m_LastClickedID: 13846
+    m_ExpandedIDs: 000000009c3300006435000082350000e835000052370000963a0000c03a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -734,7 +734,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c2330000ae35000080370000d63a000000ca9a3b
+    m_ExpandedIDs: 000000009c33000082350000e835000052370000c03a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -778,7 +778,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 3}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0

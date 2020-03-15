@@ -3,8 +3,8 @@
 public class Shooting : MonoBehaviour
 {
     [Header("shooting")]    
-    Projectile_SO projectileToSpawn;
-    public Projectile_SO[] skills;                 // Debug Array with different Projectiles
+    Projectile projectileToSpawn;
+    public Projectile[] skills;                 // Debug Array with different Projectiles
     private float currentCD = 0.0f;
 
     [Header("aiming")]
@@ -37,16 +37,20 @@ public class Shooting : MonoBehaviour
         {
             projectileToSpawn = skills[0];
         }
-         if(Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             projectileToSpawn = skills[1];
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            projectileToSpawn = skills[2];
         }
     }
 
     void Shoot()
     {  
-        GameObject bullet = Instantiate(projectileToSpawn.prefab, aimTransform.position, aimTransform.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(aimTransform.right * projectileToSpawn.speed, ForceMode2D.Impulse);
+        Projectile projectile = Instantiate(projectileToSpawn, aimTransform.position, aimTransform.rotation);
+        projectile.GetComponent<Rigidbody2D>().AddForce(aimTransform.right * projectileToSpawn.speed, ForceMode2D.Impulse);
         ps_muzzleFlash.Play();
     }
 

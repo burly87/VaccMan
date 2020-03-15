@@ -10,9 +10,12 @@ public class blinking : MonoBehaviour
 
     void blink()
     {
-        StartCoroutine(changeSize());
-        float rnd = Random.Range(2, 10);
-        Invoke("blink",rnd);
+        if(this.isActiveAndEnabled == true)
+        {
+            StartCoroutine(changeSize());
+            float rnd = Random.Range(2, 10);
+            Invoke("blink",rnd);
+        }
         
     }
     IEnumerator changeSize()

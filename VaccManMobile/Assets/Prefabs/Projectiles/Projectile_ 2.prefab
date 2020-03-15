@@ -5026,3 +5026,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps_explosion: {fileID: 415284214}
+  damage: 3
+  cooldown: 2
+  speed: 4
