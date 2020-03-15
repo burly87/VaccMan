@@ -93,7 +93,8 @@ GameObject:
   - component: {fileID: 789913851958661573}
   - component: {fileID: 789913851958661574}
   - component: {fileID: 789913851958661572}
-  - component: {fileID: 789913851958661568}
+  - component: {fileID: 675824582795487703}
+  - component: {fileID: 1571703850}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -195,11 +196,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
-  - {fileID: 11400000, guid: 40ab57d37ca8f644080a57972588c2e8, type: 2}
-  - {fileID: 11400000, guid: 4815dd6a4d216c44dbfde38380458dc5, type: 2}
+  - {fileID: 759915513466128960, guid: a64ead24cb9e714479f25a89c28b6ad7, type: 3}
+  - {fileID: 1798881429, guid: cb0f7b28f69e30d4c817455b9207e82f, type: 3}
   aimTransform: {fileID: 789913852640278370}
   ps_muzzleFlash: {fileID: 789913853583839443}
---- !u!114 &789913851958661568
+--- !u!114 &675824582795487703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +209,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 789913851958661571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33566b522f5668e4d8cde6999cca1f9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d4e0db3d0291f741b322a61c72b1f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask: {fileID: 789913851776609773}
+  eyes: {fileID: 789913851982542239}
+  health: 3
+  ps_Dying: {fileID: 789913853474229273}
+--- !u!114 &1571703850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789913851958661571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4e0db3d0291f741b322a61c72b1f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 789913851776609773}
@@ -389,7 +406,7 @@ MonoBehaviour:
   m_LightVolumeOpacity: 0.11
   m_ApplyToSortingLayers: 00000000b3eb63c2635c5495b3ba52ddfb9acfdd1bf38fe2
   m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 1
+  m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
   m_PointLightInnerAngle: 360

@@ -42,7 +42,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
+  - name: LevelSprite
     uniqueID: 3261328307
     locked: 0
   - name: Object
