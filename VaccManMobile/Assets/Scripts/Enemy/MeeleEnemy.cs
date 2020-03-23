@@ -10,14 +10,13 @@ public class MeeleEnemy : MonoBehaviour
     // --- seek and follow player ---
     [Header("Movement")]
     private Vector2 movement;
-    [SerializeField] private float speed = .08f;
+    [SerializeField] private float speed = .8f;
     bool moveAble = true;
 
     public bool MyMoveAble
     {
         set { moveAble = value;}
     }
-
 
     float dist = Mathf.Infinity;                        // to calculate distance to player and stop when near to him
 
@@ -29,7 +28,7 @@ public class MeeleEnemy : MonoBehaviour
 
     // --- attack ---
     [Header("Attack related")]
-    [SerializeField] float attackRange = 2.0f;
+    [SerializeField] float attackRange = .9f;
     [SerializeField] float attackSpeed = 2.0f;
     [SerializeField] int damage = 1;
     private float attackCooldown;

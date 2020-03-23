@@ -337,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 0.5
-  attackRange: 0.7
+  attackRange: 0.9
   attackSpeed: 2
   damage: 1
   animator: {fileID: 0}
